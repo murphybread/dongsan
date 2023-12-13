@@ -6,9 +6,11 @@
   </div>
   
   <div class="room">
-    <a v-for="(product,i) in products" :key="i">
-      {{ product }} <br>{{ prices[i] }}만원<br></a>
-  </div>
+    
+    <a v-for="(product, i) in products" :key="i" class="product-item">
+    {{ product }} {{ prices[i] }}만원
+    </a>
+    </div>
   
 
 
@@ -56,9 +58,9 @@ export default {
   padding: 10px;
 }
 
-.room{
-  background: yellowgreen;
-  margin: 15px;
-
+.room a {
+  display: block;
+  margin-bottom: 10px; /* 각 a 태그 아래에 마진을 적용 */
+  border: solid;
 }
 </style>
