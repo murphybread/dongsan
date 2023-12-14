@@ -14,6 +14,7 @@
   
 
 
+    <button @click="reports++"> 신고버튼</button> <span>{{ reports }}</span>
 
 </template>
 
@@ -24,6 +25,7 @@ export default {
   name: 'App',
   data(){
     return{
+      reports: 0,
       menus: ['menu', 'shop' ,'about'],
       products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
       prices: [70,60,50 ]
