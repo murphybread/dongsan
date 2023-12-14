@@ -9,12 +9,13 @@
     
     <a v-for="(product, i) in products" :key="i" class="product-item">
     {{ product }} {{ prices[i] }}만원
+    <button @click="increase(i)"> 신고버튼</button> <span>{{ reports[i] }}</span>
     </a>
     </div>
   
 
 
-    <button @click="increase"> 신고버튼</button> <span>{{ reports }}</span>
+    
 
 </template>
 
@@ -25,15 +26,15 @@ export default {
   name: 'App',
   data(){
     return{
-      reports: 0,
+      reports: [0,0,0],
       menus: ['menu', 'shop' ,'about'],
       products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
       prices: [70,60,50 ]
     }
   },
   methods: {
-    increase(){
-      this.reports +=1 
+    increase(num){
+      this.reports[num] +=1 
     }
   },
   components: {
